@@ -9,7 +9,7 @@ const Footer = () => {
 
         {/* Brand */}
         <div className="col-span-2">
-          <img src={assets.logo} alt="MovieBook Logo" className="w-36 h-auto" />
+          <img src={assets.logo} alt="OnShow Logo" className="w-36 md:w-40 h-auto" />
           <p className="text-sm leading-relaxed max-w-md">
             Book your favorite movies, shows, and events in just a few clicks.
             Bringing you the best of entertainment — anytime, anywhere.

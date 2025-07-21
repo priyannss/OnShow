@@ -2,9 +2,11 @@ import { StarIcon } from 'lucide-react';
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import timeFormat from '../lib/timeFormat';
+import { useAppContext } from '../context/AppContext';
 
 
 const MovieCard = ({ movie }) => {
+  const { image_base_url } = useAppContext();
   const navigate = useNavigate();
 
   return (
@@ -12,7 +14,7 @@ const MovieCard = ({ movie }) => {
       
       <img
         onClick={() => { navigate(`/movies/${movie._id}`); scrollTo(0, 0); }}
-        src={movie.backdrop_path}
+        src={image_base_url + movie.backdrop_path}
         alt={movie.title}
         className="aspect-video w-full object-cover cursor-pointer transition duration-300"
       />
