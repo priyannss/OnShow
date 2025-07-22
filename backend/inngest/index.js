@@ -102,6 +102,189 @@ const sendBookingConfirmationEmail = inngest.createFunction(
         }).populate('user');
 
         // send email here using any email service
+        // await resend.emails.send({
+        //     from: 'OnShow <onboarding@resend.dev>',
+        //     to: booking.user.email,
+        //     subject: `Booking Confirmation: ${booking.show.movie.title} booked!`,
+        //     html: `
+        //         <div style="
+        //             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        //             line-height: 1.6; 
+        //             max-width: 600px; 
+        //             margin: 0 auto; 
+        //             background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+        //             border-radius: 12px;
+        //             overflow: hidden;
+        //             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        //         ">
+        //             <!-- Header -->
+        //             <div style="
+        //                 background: linear-gradient(135deg, #F84565 0%, #ff6b6b 100%); 
+        //                 padding: 30px 40px; 
+        //                 text-align: center;
+        //                 color: white;
+        //             ">
+        //                 <span style="
+        //                         font-size: 20px;
+        //                         font-weight: 700;
+        //                     ">OnShow</span>
+
+        //                 <h1 style="
+        //                     margin: 0; 
+        //                     font-size: 28px; 
+        //                     font-weight: bold;
+        //                     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        //                 ">🎬 Booking Confirmed!</h1>
+        //                 <p style="
+        //                     margin: 10px 0 0 0; 
+        //                     font-size: 16px; 
+        //                     opacity: 0.9;
+        //                 ">Your movie experience awaits</p>
+        //             </div>
+
+        //             <!-- Content -->
+        //             <div style="padding: 40px;">
+        //                 <h2 style="
+        //                     color: #2d3436; 
+        //                     font-size: 24px; 
+        //                     margin: 0 0 20px 0;
+        //                     font-weight: 600;
+        //                 ">Hi ${booking.user.name}! 👋</h2>
+
+        //                 <p style="
+        //                     color: #636e72; 
+        //                     font-size: 16px; 
+        //                     margin: 0 0 30px 0;
+        //                 ">Your booking for the show <strong style="
+        //                     color: #F84565; 
+        //                     font-size: 18px;
+        //                     background: linear-gradient(135deg, #F84565, #ff6b6b);
+        //                     -webkit-background-clip: text;
+        //                     -webkit-text-fill-color: transparent;
+        //                     background-clip: text;
+        //                 ">${booking.show.movie.title}</strong> has been confirmed!</p>
+
+        //                 <!-- Booking Details Card -->
+        //                 <div style="
+        //                     background: white;
+        //                     border-radius: 12px;
+        //                     padding: 25px;
+        //                     margin: 25px 0;
+        //                     box-shadow: 0 5px 20px rgba(248, 69, 101, 0.1);
+        //                     border-left: 4px solid #F84565;
+        //                 ">
+        //                     <h3 style="
+        //                         color: #2d3436;
+        //                         margin: 0 0 20px 0;
+        //                         font-size: 18px;
+        //                         font-weight: 600;
+        //                     ">📅 Show Details</h3>
+
+        //                     <div style="
+        //                         display: grid;
+        //                         gap: 15px;
+        //                     ">
+        //                         <div style="
+        //                             display: flex;
+        //                             justify-content: space-between;
+        //                             align-items: center;
+        //                             padding: 12px 0;
+        //                             border-bottom: 1px solid #e8eaed;
+        //                         ">
+        //                             <strong style="color: #636e72; font-size: 14px;">📆 DATE:</strong> 
+        //                             <span style="
+        //                                 color: #2d3436; 
+        //                                 font-weight: 600; 
+        //                                 font-size: 16px;
+        //                             ">${new Date(booking.show.showDateTime).toLocaleDateString('en-US', {timeZone: 'Asia/Kolkata'})}</span>
+        //                         </div>
+
+        //                         <div style="
+        //                             display: flex;
+        //                             justify-content: space-between;
+        //                             align-items: center;
+        //                             padding: 12px 0;
+        //                         ">
+        //                             <strong style="color: #636e72; font-size: 14px;">⏰ TIME:</strong> 
+        //                             <span style="
+        //                                 color: #2d3436; 
+        //                                 font-weight: 600; 
+        //                                 font-size: 16px;
+        //                             ">${new Date(booking.show.showDateTime).toLocaleTimeString('en-US', {timeZone: 'Asia/Kolkata'})}</span>
+        //                         </div>
+        //                     </div>
+        //                 </div>
+
+        //                 <!-- Fun Message -->
+        //                 <div style="
+        //                     background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+        //                     border-radius: 12px;
+        //                     padding: 25px;
+        //                     text-align: center;
+        //                     margin: 25px 0;
+        //                     border: 2px dashed #F84565;
+        //                 ">
+        //                     <p style="
+        //                         font-size: 18px; 
+        //                         margin: 0; 
+        //                         color: #2d3436;
+        //                         font-weight: 600;
+        //                     ">Enjoy the show! 🍿✨</p>
+        //                     <p style="
+        //                         font-size: 14px; 
+        //                         margin: 10px 0 0 0; 
+        //                         color: #636e72;
+        //                     ">Don't forget to grab some snacks!</p>
+        //                 </div>
+
+        //                 <!-- Thank You Message -->
+        //                 <div style="
+        //                     text-align: center;
+        //                     margin: 30px 0;
+        //                 ">
+        //                     <p style="
+        //                         color: #2d3436; 
+        //                         font-size: 16px; 
+        //                         font-weight: 600;
+        //                         margin: 0;
+        //                     ">Thank you for choosing <span style="
+        //                         color: #F84565;
+        //                         font-weight: 700;
+        //                         background: linear-gradient(135deg, #F84565, #ff6b6b);
+        //                         -webkit-background-clip: text;
+        //                         -webkit-text-fill-color: transparent;
+        //                         background-clip: text;
+        //                     ">OnShow</span>! 🎭</p>
+        //                     <p style="
+        //                         color: #636e72; 
+        //                         font-size: 14px; 
+        //                         margin: 8px 0 0 0;
+        //                     ">We hope you have an amazing movie experience</p>
+        //                 </div>
+        //             </div>
+
+        //             <!-- Footer -->
+        //             <div style="
+        //                 background: #2d3436;
+        //                 padding: 25px 40px;
+        //                 text-align: center;
+        //                 color: white;
+        //             ">
+        //                 <p style="
+        //                     margin: 0;
+        //                     font-size: 12px;
+        //                     opacity: 0.8;
+        //                 ">© 2025 OnShow • Making movie experiences memorable</p>
+        //                 <p style="
+        //                     margin: 10px 0 0 0;
+        //                     font-size: 11px;
+        //                     opacity: 0.6;
+        //                 ">Need help? Contact us at support@onshow.com</p>
+        //             </div>
+        //         </div>
+        //     `
+        // })
+
         await resend.emails.send({
             from: 'OnShow <onboarding@resend.dev>',
             to: booking.user.email,
@@ -196,7 +379,7 @@ const sendBookingConfirmationEmail = inngest.createFunction(
                                         color: #2d3436; 
                                         font-weight: 600; 
                                         font-size: 16px;
-                                    ">${new Date(booking.show.showDateTime).toLocaleDateString('en-US', {timeZone: 'Asia/Kolkata'})}</span>
+                                    ">${new Date(booking.show.showDateTime).toLocaleDateString('en-US', { timeZone: 'Asia/Kolkata' })}</span>
                                 </div>
                                 
                                 <div style="
@@ -204,13 +387,19 @@ const sendBookingConfirmationEmail = inngest.createFunction(
                                     justify-content: space-between;
                                     align-items: center;
                                     padding: 12px 0;
+                                    margin-top: 10px;
                                 ">
                                     <strong style="color: #636e72; font-size: 14px;">⏰ TIME:</strong> 
                                     <span style="
                                         color: #2d3436; 
                                         font-weight: 600; 
                                         font-size: 16px;
-                                    ">${new Date(booking.show.showDateTime).toLocaleTimeString('en-US', {timeZone: 'Asia/Kolkata'})}</span>
+                                    ">${new Date(booking.show.showDateTime).toLocaleTimeString('en-US', {
+                        timeZone: 'Asia/Kolkata',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: true
+                    })}</span>
                                 </div>
                             </div>
                         </div>
@@ -300,21 +489,21 @@ const sendShowReminders = inngest.createFunction(
         // prepare reminder tasks
         const reminderTasks = await step.run("prepare-reminder-tasks", async () => {
             const shows = await Show.find({
-                showTime: {$gte: windowStart, $lte: in8Hours}
+                showTime: { $gte: windowStart, $lte: in8Hours }
             }).populate('movie');
 
             const tasks = [];
 
-            for(const show of shows) {
-                if(!show.movie || !show.occupiedSeats) continue;
+            for (const show of shows) {
+                if (!show.movie || !show.occupiedSeats) continue;
 
-                const userIds = [ ...new Set(Object.values(show.occupiedSeats)) ]
+                const userIds = [...new Set(Object.values(show.occupiedSeats))]
 
-                if(userIds.length === 0) continue;
+                if (userIds.length === 0) continue;
 
-                const users = await User.find({_id: {$in: userIds}}).select("name email");
+                const users = await User.find({ _id: { $in: userIds } }).select("name email");
 
-                for(const user of users) {
+                for (const user of users) {
                     tasks.push({
                         userEmail: user.email,
                         userName: user.email,
@@ -327,8 +516,8 @@ const sendShowReminders = inngest.createFunction(
             return tasks;
         })
 
-        if(reminderTasks.length === 0) {
-            return {sent: 0, message: "No reminders to send."}
+        if (reminderTasks.length === 0) {
+            return { sent: 0, message: "No reminders to send." }
         }
 
         // send reminder email
@@ -425,10 +614,10 @@ const sendShowReminders = inngest.createFunction(
                                             font-size: 20px;
                                             font-weight: 600;
                                         ">${new Date(task.showTime).toLocaleString('en-US', {
-                                            timeZone: 'Asia/Kolkata',
-                                            dateStyle: 'full',
-                                            timeStyle: 'short'
-                                        })}</span>
+                        timeZone: 'Asia/Kolkata',
+                        dateStyle: 'full',
+                        timeStyle: 'short'
+                    })}</span>
                                     </div>
                                 </div>
                                 
