@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 import { useAppContext } from '../context/AppContext';
 
 const SeatLayout = () => {
-  const groupRows = [['A', 'B'], ['C', 'D'], ['E', 'F'], ['G', 'H'], ['I', 'J']];
+  const groupRows = [['A', 'B'], ['C', 'D'], ['E', 'F'], ['G', 'H', 'I'], ['J', 'K', 'L'],];
 
   const { id, date } = useParams();
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -53,7 +53,7 @@ const SeatLayout = () => {
     setSelectedSeats((prev) => prev.includes(seatId) ? prev.filter((seat) => seat !== seatId) : [...prev, seatId]);
   }
 
-  const renderSeats = (row, count = 9) => (
+  const renderSeats = (row, count = 8) => (
     <div key={row} className='flex gap-2 mt-2'>
       <div className='flex flex-wrap items-center justify-center gap-2'>
         {Array.from({ length: count }, (_, index) => {

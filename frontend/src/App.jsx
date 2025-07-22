@@ -16,6 +16,7 @@ import Dashboard from './pages/admin/Dashboard'
 import { useAppContext } from './context/AppContext'
 import { SignIn } from '@clerk/clerk-react'
 import Loading from './components/Loading'
+import PaymentSuccess from './components/PaymentSuccess'
 
 
 const App = () => {
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/movies/:id/:date" element={<SeatLayout />} />
         <Route path="/my-bookings" element={<MyBookings />} />
         <Route path="/favourites" element={<Favourite />} />
-        <Route path="/loading/:nextUrl" element={<Loading />} />
+        <Route path="/loading/:nextUrl" element={<PaymentSuccess />} />
 
         <Route path='/admin/*' element={user ? <Layout /> : (
           <div className='min-h-screen flex justify-center items-center'>
