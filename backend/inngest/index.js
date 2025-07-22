@@ -124,24 +124,10 @@ const sendBookingConfirmationEmail = inngest.createFunction(
                         text-align: center;
                         color: white;
                     ">
-                        <svg width="140" height="50" viewBox="0 0 140 50" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <!-- Gradient for the accent -->
-                                <linearGradient id="accentGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#FFE4E1;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            
-                            <!-- Main text "OnShow" with modified 'O' -->
-                            <text x="10" y="32" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">
-                                <tspan fill="url(#accentGradient1)">O</tspan>n<tspan fill="url(#accentGradient1)">Show</tspan>
-                            </text>
-                            
-                            <!-- Small ticket notch cut-out in the 'O' -->
-                            <rect x="18" y="20" width="3" height="2" rx="1" fill="#FFFFFF" opacity="0.9"/>
-                            <rect x="18" y="28" width="3" height="2" rx="1" fill="#FFFFFF" opacity="0.9"/>
-                        </svg>
+                        <span style="
+                                font-size: 20px;
+                                font-weight: 700;
+                            ">OnShow</span>
                         
                         <h1 style="
                             margin: 0; 
