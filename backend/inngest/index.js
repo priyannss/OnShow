@@ -155,7 +155,7 @@ const sendBookingConfirmationEmail = inngest.createFunction(
                             color: #636e72; 
                             font-size: 16px; 
                             margin: 0 0 30px 0;
-                        ">Your booking for <strong style="
+                        ">Your booking for the show <strong style="
                             color: #F84565; 
                             font-size: 18px;
                             background: linear-gradient(135deg, #F84565, #ff6b6b);
