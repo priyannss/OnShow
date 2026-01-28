@@ -12,19 +12,21 @@ export const assets = {
 
 export const dummyTrailers = [
     {
-        image: "https://img.youtube.com/vi/CaWRDITtT1U/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=CaWRDITtT1U"
+        // *Arcane: Season 2 (Netflix) – Official Trailer*
+        image: "https://img.youtube.com/vi/ysqiEC6bLUI/maxresdefault.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=ysqiEC6bLUI"
+        // Final season trailer for Arcane’s second season. :contentReference[oaicite:1]{index=1}
+    },
+    {
+        image: "https://img.youtube.com/vi/-h7mH8vG3cQ/maxresdefault.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=-h7mH8vG3cQ"
     },
     {
         image: "https://img.youtube.com/vi/03u4xyj0TH4/maxresdefault.jpg",
         videoUrl: "https://www.youtube.com/watch?v=03u4xyj0TH4"
     },
     {
-        image: "https://img.youtube.com/vi/iKZyYdwS3Wg/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=iKZyYdwS3Wg"
-    },
-    {
-        image: "https://img.youtube.com/vi/1BcvAdfyL5Y/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=1BcvAdfyL5Y"
+        image: "https://img.youtube.com/vi/e0Eo0D038rQ/maxresdefault.jpg",
+        videoUrl: "https://www.youtube.com/watch?v=e0Eo0D038rQ"
     }
 ]
